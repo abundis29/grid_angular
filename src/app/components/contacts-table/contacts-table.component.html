@@ -1,0 +1,26 @@
+<div class="table-responsive"
+     infiniteScroll
+     (scrolled)="onScroll()">
+    <table class="table">
+        <thead>
+            <tr id="desktop_header">
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody id="mobile_as_infinity">
+            <tr class=""
+                *ngFor="let contact of pagination.paginated; index as i;">
+                <th><a> <b class="mobile">First Name:</b> {{contact.name}} </a></th>
+                <th><a> <b class="mobile">Last Name: </b> {{contact.sourname}}</a></th>
+                <th><a> <b class="mobile">Phone: </b> {{contact.phone}} </a></th>
+            </tr>
+        </tbody>
+
+    </table>
+    <app-pagination [pagination]="pagination"
+                    id="desktop_header"
+                    (pageChanged)="changePageEvent($event)">
+    </app-pagination>
+</div>

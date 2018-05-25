@@ -1,0 +1,11 @@
+
+    <nav aria-label="Page navigation example">
+   <ul class="pagination"
+        id="pagin">
+        <li *ngFor="let item of items; index as i;">
+            <a [ngClass]="{'sortAction': true, 'current' : item.Active, 'disabled' : item.Disable }" (click)="changePage(item.Index);">
+          {{item.PageLabel}}
+        </a>
+        </li>
+    </ul>
+    </nav>
